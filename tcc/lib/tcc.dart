@@ -8,7 +8,7 @@ void main() {
     clientesAtendidos++;
     print('Cliente/atendimento $clientesAtendidos');
 
-    print("De qual forma quer acessar? (Digite 1 para funcionário ou 2 para cliente)");
+     print("De qual forma quer acessar? (Digite 1 para funcionário, 2 para cliente ou 10 para Sair)");
     var tipoDeAcesso = stdin.readLineSync() as String; // Recebe como String
     var acesso = int.parse(tipoDeAcesso);
 
@@ -50,66 +50,100 @@ void main() {
         break;
 
       case 2:
-        var numeroDigitado = 0; // Inicializando aqui
+        var continuarCompra = true; // Controle para continuar adicionando produtos
+        var valorProduto = 0.0;
+        var desconto = 0.0;
+
         print("Qual o seu nome?");
         var nomeUsuario = stdin.readLineSync() as String;
-
         print('Prezado(a), $nomeUsuario. Seja muito bem-vindo(a) à nossa loja.');
-        print('Oferecemos em nossa loja produtos e serviços para seu PET. Para venda de produtos, procure o colaborador Junior e, para serviços como banho ou tosa, procure o colaborador Neto. Obrigado e esperamos que tenha uma ótima experiência em nossa loja.');
+        print('Oferecemos em nossa loja produtos e serviços para seu PET.');
+        print('Para venda de produtos, procure o colaborador Junior.');
+        print('Para serviços como banho ou tosa, procure o colaborador Neto.');
+        print('Obrigado e esperamos que tenha uma ótima experiência em nossa loja.');
 
-        double valorProduto = 0.0;
-        double desconto = 0.0;
-
-        while (numeroDigitado != 10) {
+        while (continuarCompra) {
           print('Digite um número entre 1, 2, 3, 4, 5, 6 ou 10 para sair');
           var numeroDigitadoString = stdin.readLineSync() as String;
-          numeroDigitado = int.tryParse(numeroDigitadoString) ?? 0;
+          var numeroDigitado = int.tryParse(numeroDigitadoString) ?? 0;
 
-          switch (numeroDigitado) {
+     switch (numeroDigitado) {
             case 1:
               print('Ração Royal Canin Indor 7,5kg com o valor promocional de R\$ 280,00');
-              valorProduto = 280.0;
+              print('Deseja adicionar Ração Royal Canin Indor 7,5kg ao seu pedido? (S/N)');
+              var resposta = stdin.readLineSync()!.toUpperCase();
+              if (resposta == 'S') {
+                valorProduto += 280.0;
+                print('Ração Royal Canin Indor 7,5kg adicionada ao pedido');
+              }
               break;
             case 2:
               print('Banho e tosa na promoção pelo preço do banho R\$ 54,00');
-              valorProduto = 54.0;
+              print('Deseja adicionar Banho e tosa ao seu pedido? (S/N)');
+              var resposta = stdin.readLineSync()!.toUpperCase();
+              if (resposta == 'S') {
+                valorProduto += 54.0;
+                print('Banho e tosa adicionados ao pedido');
+              }
               break;
             case 3:
               print('Roupas em oferta - Capa de chuva R\$ 59,99');
-              valorProduto = 59.99;
+              print('Deseja adicionar Capa de chuva ao seu pedido? (S/N)');
+              var resposta = stdin.readLineSync()!.toUpperCase();
+              if (resposta == 'S') {
+                valorProduto += 59.99;
+                print('Capa de chuva adicionada ao pedido');
+              }
               break;
             case 4:
               print('Novos serviços oferecidos: Hidratação de pelo R\$ 39,99 | Tosa higienica por R\$ 10,99 | Tingimento dos pelo por R\$ 55,99');
-              valorProduto = 10.99 + 39.99 + 55.99;
+              print('Deseja adicionar os novos serviços ao seu pedido? (S/N)');
+              var resposta = stdin.readLineSync()!.toUpperCase();
+              if (resposta == 'S') {
+                valorProduto += 10.99 + 39.99 + 55.99;
+                print('Novos serviços adicionados ao pedido');
+              }
               break;
             case 5:
               print('Compre um saco de 15kg de ração (R\$ 345,99) e ganhe 10% de desconto no banho');
-              valorProduto = 345.99;
-              desconto = 0.1;
+              print('Deseja adicionar um saco de 15kg de ração ao seu pedido? (S/N)');
+              var resposta = stdin.readLineSync()!.toUpperCase();
+              if (resposta == 'S') {
+                valorProduto += 345.99;
+                desconto += 0.1;
+                print('Saco de ração adicionado ao pedido');
+              }
               break;
             case 6:
               print('Compre 1 banho com tosa higienica e hidratação e ganhe 20% de desconto no valor total');
-              valorProduto = 54.0 + 10.99 + 39.99;
-              desconto = 0.2;
+              print('Deseja adicionar o combo de banho e tosa ao seu pedido? (S/N)');
+              var resposta = stdin.readLineSync()!.toUpperCase();
+              if (resposta == 'S') {
+                valorProduto += 54.0 + 10.99 + 39.99;
+                desconto += 0.2;
+                print('Combo de banho e tosa adicionado ao pedido');
+              }
               break;
             case 10:
               print('Saindo do programa...');
-              continuar = false; // Modificando a variável de controle para sair do while
+              continuarCompra = false; // Encerra o loop de adição de produtos
               break;
             default:
               print('Número inválido');
           }
+
           if (numeroDigitado != 10) {
             double totalComDesconto = valorProduto - (valorProduto * desconto);
-            print('Valor com desconto: R\$ ${totalComDesconto.toStringAsFixed(2)}');
+            print('Valor total atualizado: R\$ ${totalComDesconto.toStringAsFixed(2)}');
           }
         }
         break;
 
       default:
-        print('#');
+        print('Opção inválida. Encerrando...');
+        continuar = false; // encerrando o loop principal
     }
   }
+  print('Total de clientes atendidos: $clientesAtendidos');
 
-  print('Número total de clientes atendidos hoje: $clientesAtendidos');
 }

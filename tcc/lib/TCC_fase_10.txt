@@ -1,0 +1,79 @@
+Levantamento de Requisitos
+
+Funcionalidades Principais:
+- 1° Acesso:
+  - Controle de Acesso (Cliente ou Funcionário) ou teclar 10 para sair e contabilizar quantidade de atendimentos.
+  Modo Funcionário:
+  - Validar acesso como funcionário através do código de acesso.
+  - Digitar Sim ou Não para as perguntas do sistema para a contratação de serviços.
+  - Soma serviços contratados e exibe o resultado na tela.
+
+Modo Cliente:
+  - Recebe nome do Usuário.
+  - Exibe mensagens de Boas Vindas.
+  - Exibe Menu com 7 opções de escolha:
+    Menu:
+    Opção 1: Exibe a opção de compra promocional de Ração e pergunta se usuário deseja adicionar ao carrinho.
+    (Ração Royal Canin Indor 7,5kg com o valor promocional de R\$ 280,00).
+
+    Opção 2: Exibe Valor promocional referente a banho e pergunta se usuário deseja adicionar ao carrinho.
+    (Banho e tosa na promoção pelo preço do banho R\$ 54,00).
+
+    Opção 3: Exibe Promoção de capa de chuva e pergunta se usuário deseja adicionar ao carrinho.
+    (Roupas em oferta - Capa de chuva R\$ 59,99).
+
+    Opção 4: Exibe 3 opções de serviços e pergunta se usuário deseja adicionar ao carrinho.
+    (Novos serviços oferecidos: Hidratação de pelo R\$ 39,99 | Tosa higienica por R\$ 10,99 | Tingimento dos pelo por R\$ 55,99).
+
+    Opção 5: Exibe promoção de desconto e pergunta se usuário deseja adicionar ao carrinho.
+    (Compre um saco de 15kg de ração (R\$ 345,99) e ganhe 10% de desconto no banho).
+
+    Opção 6: Exibe promoção de desconto e pergunta se usuário deseja adicionar ao carrinho.
+    (Compre 1 banho com tosa higienica e hidratação e ganhe 20% de desconto no valor total).
+
+    Opção 10: Função de Sair.
+    Encerra o atendimento.
+
+Ações do Usuário:
+  - Digitar a forma de acesso (Cliente ou Funcionário).
+  - Caso seja funcionário, obrigatoriamente deve digitar o código de acesso; senão, ele volta ao menu de forma de acesso.
+  - Caso seja cliente, a plataforma exibe normalmente as opções do sistema.
+
+Identificação e Lista de Requisitos:
+
+Formatos de entrada esperados:
+- 1° Acesso:
+  - Usuário deve digitar 1 para funcionário, 2 para cliente ou 10 para Sair.
+
+Acesso modo funcionário:
+- Usuário deve obrigatoriamente escrever o código string pré-definido; caso contrário, volta ao menu inicial.
+- Após acessar em modo funcionário, usuário deve responder as perguntas utilizando os caracteres 's' ou 'n', que caso sejam lowercase, são convertidos.
+
+Acesso Modo Cliente:
+- Usuário deve digitar seu nome.
+- Para ver os produtos, usuário deve digitar caracteres de 1 a 6 ou para sair, digitar 10.
+- Para contratar um serviço ou adquirir um produto, usuário deve digitar 's' ou 'n'.
+
+Dependências Externas:
+- Nenhuma no momento.
+
+Fluxo de Execução:
+O programa inicia exibindo uma mensagem inicial solicitando ao usuário que escolha entre acessar como funcionário, cliente ou sair. Dependendo da escolha:
+- Acesso como Funcionário:
+  - O programa pede ao usuário que digite um código de acesso.
+  - Se o código estiver correto ("cuidapetrestrito"), o funcionário é autorizado a acessar.
+  - Em seguida, o programa faz uma série de perguntas ao funcionário sobre serviços contratados.
+  - O total dos serviços contratados é calculado e exibido.
+- Acesso como Cliente:
+  - O programa solicita ao cliente que digite seu nome e exibe uma mensagem de boas-vindas.
+  - Um menu é apresentado ao cliente com várias opções de compra e serviços.
+  - O cliente pode escolher adicionar produtos ao carrinho digitando os números correspondentes aos produtos ou sair digitando 10.
+  - O valor total do carrinho é atualizado conforme o cliente adiciona ou remove itens.
+  - Descontos são aplicados automaticamente conforme certas condições de promoção.
+  - Após cada ação do cliente, o programa aguarda a próxima entrada do usuário.
+
+Registrar Limitações e Restrições:
+- Compatibilidade: O programa depende da capacidade do sistema operacional suportar a linguagem de programação Dart e suas dependências. Versões mais antigas ou sistemas operacionais menos comuns podem não oferecer suporte total.
+- Escopo Funcional: O programa atualmente não suporta múltiplos usuários simultaneamente. Cada execução é limitada a um único usuário interagindo com o sistema por vez.
+- Atualizações Futuras: Mudanças significativas no fluxo de negócios ou nas regras de desconto podem exigir atualizações extensivas no código para manter a funcionalidade e precisão do programa.
+
