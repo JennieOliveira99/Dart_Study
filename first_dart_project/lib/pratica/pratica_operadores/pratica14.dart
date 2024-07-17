@@ -6,7 +6,7 @@ void main() {
   var precoQueijo = 8.00;
   var precoCoxinha = 15.00;
   var precoPaoDoce = 12.00;
-  var precoBisnaga = 9.00;
+ var precoBisnaga = 9.00;
   var precoPaoDeForma = 10.00;
 
   // Inputs do usuário

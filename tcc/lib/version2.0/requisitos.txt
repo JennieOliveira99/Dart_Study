@@ -1,0 +1,56 @@
+TCC Cuidapet
+Fase 11
+
+Com o crescimento de sua loja, Pedro solicitou novas funcionalidades para o sistema.
+
+Os desenvolvedores sugeriram criar do zero uma versão 2.0 e manter somente as funcionalidades mais utilizadas da versão anterior.
+
+O sistema deve funcionar da seguinte maneira:
+
+    Na tela principal, será apresentada a mensagem “Bem vindo ao autoatendimento do Cuidapet” Abaixo da mensagem deve ser exibida a mensagem solicitando o nome do cliente.
+
+    Ao digitar seu nome, o sistema deve apresentar o seguinte menu:
+        Opção 1 – Ver promoções.
+        Opção 2 – Solicitar serviço.
+        Opção 3 – Listar carrinho de compra.
+        Opção 4 - Finalizar carrinho de compra.
+        Opção 0 - Sair.
+
+    Abaixo deve ser exibida a mensagem “Digite sua opção desejada:”.
+
+    Se o cliente digitar a Opção 1, o sistema deve apresentar os seguintes itens:
+        Código 101 - Ração Royal Canin Indoor Para Cães Adultos De Porte Mini De Ambientes Internos 7,5kg na promoção pelo preço de R$ 290,00.
+        Código 102 - Ração Royal Canin Sterilised para Gatos Adultos Castrados e com o valor promocional de R$ 492,00.
+        Código 103 - Bifinho Keldog para Cães Porte Pequeno Sabor Carne e Cereais por R$23,92.
+        Código 104 - Fraldas Descartáveis Super Secão para Cães Machos com 12 Unidades R$ 38,61.
+        8 – Adicionar ao carrinho de compras.
+        0 – Voltar.
+
+    Se o cliente digitar a Opção 2, o sistema deve apresentar os serviços disponíveis:
+        Código 201 - Banho e tosa - R$ 55,99.
+        Código 202 - Tosa higienica -R$ 12,99.
+        Código 203 - Hidratação dos pelos - R$ 20,99.
+        8 – Adicionar ao carrinho de compras.
+        0 – Voltar.
+
+    Se o cliente digitar a Opção 3, o sistema deve listar o nome e o valor dos produtos incluídos no carrinho de compras.
+
+    Se o cliente digitar a Opção 4, o sistema deve perguntar a forma de pagamento (dinheiro ou cartão). No dinheiro, o sistema deve calcular 10% de desconto do valor final.
+
+    Observação: no autoatendimento, o cliente consegue adicionar no máximo 3 produtos/serviços em seu carrinho de compras. Se ele atingir esse número, o sistema deve apresentar a mensagem informando que o seu carrinho de compras já está cheio. Acesso restrito
+
+    Ao digitar o código cuidapetrestrito no lugar do nome do cliente, o sistema deve abrir a área restrita dos funcionários.
+
+    O sistema deve perguntar o nome do cliente e o valor gasto na loja. Nesses casos, o próprio funcionário acompanhou o cliente e sabe exatamente os itens comprados ou serviços adquiridos.
+
+    O funcionário deve entrar com a forma de pagamento (D – dinheiro ou C – cartão), e o sistema deve apresentar o valor final a ser pago. Se o pagamento for no dinheiro, o sistema deve calcular 10% de desconto no valor final.
+
+Funcionamento geral do sistema
+
+    O sistema deve validar todas as entradas do teclado, quando possível;
+
+    O sistema deve ficar rodando até que seja a opção 0 no menu principal.
+
+    O sistema deve apresentar a quantidade de vendas e o valor total das vendas do dia ao ser finalizado.
+
+    Quando acessado o menu Adicionar ao carrinho de compras o sistema deve solicitar o código do produto para assim poder adicionar o produto ao carrinho seguindo as regras anteriores.
