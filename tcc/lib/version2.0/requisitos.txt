@@ -54,3 +54,7 @@ Funcionamento geral do sistema
     O sistema deve apresentar a quantidade de vendas e o valor total das vendas do dia ao ser finalizado.
 
     Quando acessado o menu Adicionar ao carrinho de compras o sistema deve solicitar o código do produto para assim poder adicionar o produto ao carrinho seguindo as regras anteriores.
+
+
+Fase 12
+Transforme a exibição do menu principal em uma função sem retorno e sem parâmetros.

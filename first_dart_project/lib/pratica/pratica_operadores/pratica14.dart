@@ -6,12 +6,12 @@ void main() {
   var precoQueijo = 8.00;
   var precoCoxinha = 15.00;
   var precoPaoDoce = 12.00;
- var precoBisnaga = 9.00;
+ //var precoBisnaga = 9.00;
   var precoPaoDeForma = 10.00;
 
   // Inputs do usuário
   print('Quantos pães você deseja comprar?');
-  var quantidadeDePaes = int.parse(stdin.readLineSync()!);
+  var quantidadeDePaes = int.parse(stdin.readLineSync()as String);
 
   print('Precisa de Leite? (sim/não)');
   var compraLeite = stdin.readLineSync() == 'sim';

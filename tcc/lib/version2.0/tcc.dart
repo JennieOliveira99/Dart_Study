@@ -1,5 +1,10 @@
 import 'dart:io';
 
+void menu(){
+   print(
+        'Opção 1 – Ver promoções | Opção 2 – Solicitar serviço | Opção 3 – Listar carrinho de compras | Opção 4 - Finalizar carrinho de compras | Opção 0 - Sair');
+}
+
 void main() {
   List<double> carrinhoDeCompras = [];
   const int maxItens = 3; //definindo condicao de apenas 3 itens por venda
@@ -37,9 +42,8 @@ void main() {
   while (true) {
     //garantindo que seja executada até o usuário pedir para sair
     // Fase 2
-    print(
-        'Opção 1 – Ver promoções | Opção 2 – Solicitar serviço | Opção 3 – Listar carrinho de compras | Opção 4 - Finalizar carrinho de compras | Opção 0 - Sair');
-
+   // print( 'Opção 1 – Ver promoções | Opção 2 – Solicitar serviço | Opção 3 – Listar carrinho de compras | Opção 4 - Finalizar carrinho de compras | Opção 0 - Sair');
+  menu();
     
     print('Digite sua opção desejada:');
     var opcaoMenuLeitura = stdin.readLineSync() ?? '';
